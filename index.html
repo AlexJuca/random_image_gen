@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Random Image Generator - Filipe </title>
+<script src='jquery-2.1.1.js'></script>
+<script>
+
+$(document).ready(function(){
+
+	//Estes sao as imagens
+	var image_array = ["img/a.jpg","img/b.jpg", "img/c.jpg", "img/d.jpg"];
+	var quantidade = image_array.length;
+
+	// Gerador de numeros aleatorios
+	function getRandom(min, max)
+	{
+		
+		 return Math.floor(Math.random() * (max - min)) + min;
+
+	}
+
+	//Em cada click este codigo vai gerir um numero inteiro e vamos usar o array para acessar a imagem que esta no disco
+	$(document).click(function(e)
+	{
+		
+		 $('#my_image').attr('src',image_array[getRandom(0, quantidade)]);
+
+	});
+	
+
+});
+
+</script>
+
+
+</head>
+<body>
+	<h2> Number : </h2>
+	<img id='my_image' src='img/a.jpg'></img>
+
+</body>
+</html>
